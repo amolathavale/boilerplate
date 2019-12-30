@@ -5,6 +5,9 @@ import webpack from 'webpack';
 import webpackMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 import webpackConfig from '../webpack.config.dev';
+import indexRouter from './routes/index'
+import userRouter from './routes/users'
+
 
 let app = express();
 
@@ -17,8 +20,11 @@ app.use(webpackMiddleware(compiler, {
 }));
 app.use(webpackHotMiddleware(compiler));
 
-app.get('/*', (req,res) => {
-	res.sendFile(path.join(__dirname,'./index.html'));
-});
+app.use('/', indexRouter)
+app.use('/api/users', userRouter)
+
+// app.get('/*', (req,res) => {
+// 	res.sendFile(path.join(__dirname,'./index.html'));
+// });
 
 app.listen(3000, () => console.log('running on localhost:3000'));
