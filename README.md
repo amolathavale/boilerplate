@@ -4,9 +4,6 @@
 
 ``` bash
 
-#clone or fork the repo
-git clone https://github.com/jasonCodeng/React-Express-Babel-Webpack-ES6-Boilerplate.git
-
 #install packages
 npm install
 
