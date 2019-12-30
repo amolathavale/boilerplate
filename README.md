@@ -1,4 +1,4 @@
-# Boilerplate for React, Node Express, Babel, Webpack in ES6
+# Boilerplate for React, Node Express
 
 ### To install and run
 
